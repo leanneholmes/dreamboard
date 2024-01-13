@@ -2,6 +2,11 @@ body {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+  color: #0c0c0c;
+}
+
 .container {
   display: grid;
   height: 100vh;
@@ -19,11 +24,19 @@ body {
   border-right: 1.5px solid lightgrey;
   font-size: 11pt;
   min-height: 100vh;
-  overflow: auto;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 21pt;
+  margin-bottom: 30px;
 }
 
 .label {
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 12pt;
+  margin-top: 12px;
+  color: #312627;
 }
 
 .canvas {
@@ -31,4 +44,16 @@ body {
   float: right;
   height: 100%;
   z-index: 0;
+}
+
+.card-1 {
+  background-color: red;
+  width: 200px;
+  height: 200px;
+}
+
+.card-2 {
+  background-color: blue;
+  width: 200px;
+  height: 200px;
 }

@@ -8,11 +8,34 @@
   <body>
     <div class="container">
       <div class="menu">
-        Left menu
+        <a href="#"><div class="title">Dreamboard Maker</div></a>
         <p></p>
         <div class="label">Background Settings</div>
+        <div class="menu-row">
+          <div class="left-float">Background Color</div>
+          <div class="right-float flexbox">
+            <input class="bg-color-input" id="bg-color-value" value="72F464" />
+            <div class="bg-color-picker-wrapper">
+              <button
+                class="bg-color-picker"
+                data-jscolor="{
+                   onInput: 'update(this, \'#canvas\')',
+                   valueElement:'#bg-color-value'}"
+              ></button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="canvas">Canvas board</div>
+      <div class="canvas" id="canvas">
+        Canvas board
+        <div class="card-1" id="card-1">Card 1</div>
+        <div class="card-2">Card 2</div>
+      </div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/Draggable.min.js"></script>
+    <script src="./scripts/Draggable.js"></script>
+    <script src="./scripts/jscolor.js"></script>
   </body>
 </html>
