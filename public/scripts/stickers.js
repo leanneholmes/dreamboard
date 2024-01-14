@@ -44,7 +44,6 @@ function addStickerToBoard() {
   updateStickerList(stickerURL);
   stickermodal.style.display = "none"; // Close modal
 }
-
 /* Places sticker div on canvas */
 function addStickerToCanvas(stickerUid, stickerURL) {
   document.getElementById("canvas-3").insertAdjacentHTML(

@@ -9,19 +9,35 @@
       href="./assets/img/rainbow-favicon.png"
     />
     <link rel="stylesheet" href="./style/about.css" />
+    <link rel="stylesheet" href="./style/loader.css" />
   </head>
   <body>
+    <div class="page-loader">
+      <div class="page-loader-content">
+        <div class="page-loader-spinner"></div>
+        <div class="page-loader-message">
+          <span>Loading...</span>
+        </div>
+      </div>
+    </div>
     <div class="container">
       <div class="left"></div>
       <div class="center">
         <div class="small-text">What is a Dreamboard?</div>
         <div class="borderline"></div>
         <div class="normal-text">
-          Dreamboard is our take on a
+          Dreamboard is our interpretation of a
           <span style="font-weight: 600">vision board</span>, which is is a
           powerful tool used for visually representing your goals. A vision
           board is a collage containing with an assortment of images and text
           that represent things you're trying to accomplish.
+          <div class="spacer"></div>
+          <div style="text-align: center">
+            <img
+              src="./assets/img/sample-board.png"
+              style="width: 350px; margin-top: 10px; margin-bottom: 10px"
+            />
+          </div>
           <div class="spacer"></div>
           Studies have shown that displaying your goals in this type of visual
           format can actually help you achieve them. Creating a vision board can
@@ -51,5 +67,7 @@
       </div>
       <div class="right"></div>
     </div>
+    <script src="./scripts/loader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   </body>
 </html>
