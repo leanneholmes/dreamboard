@@ -81,6 +81,47 @@
             Delete Card
           </button>
         </div>
+        <hr class="linebreak" />
+        <div class="label">Stickers</div>
+        <div class="current-stickers">
+          <div id="current-stickers-go-here"></div>
+        </div>
+        <div id="add-sticker-hidden">
+          <div class="add-button-wrapper">
+            <button class="button-add" onClick="openStickerModal()">
+              <div class="button-text">Add New</div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-photo-circle-plus"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M15 8h.01" />
+                <path
+                  d="M20.964 12.806a9 9 0 0 0 -8.964 -9.806a9 9 0 0 0 -9 9a9 9 0 0 0 9.397 8.991"
+                />
+                <path d="M4 15l4 -4c.928 -.893 2.072 -.893 3 0l4 4" />
+                <path d="M14 14l1 -1c.928 -.893 2.072 -.893 3 0" />
+                <path d="M16 19.33h6" />
+                <path d="M19 16.33v6" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <button
+          class="button-delete"
+          id="delete-sticker"
+          onclick="deleteSticker()"
+        >
+          Delete Sticker
+        </button>
       </div>
 
       <!-- Canvas for board -->
@@ -267,10 +308,88 @@
         </div>
       </div>
     </div>
+    <!-- stickers -->
+    <!-- Sticker Modal -->
+    <div id="sticker-modal" class="sticker-modal">
+      <div class="sticker-modal-content">
+        <span class="sticker-close">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-x"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M18 6l-12 12" />
+            <path d="M6 6l12 12" />
+          </svg>
+        </span>
+        <div class="modal-title" style="margin-bottom: 10px">Add a Sticker</div>
+        <div class="modal-label">Choose one from the gallery below:</div>
+        <div class="sticker-gallery">
+          <input
+            type="radio"
+            name="stickerToAdd"
+            value="20241"
+            id="20241"
+            class="input-hidden"
+          />
+          <label for="20241">
+            <img src="./assets/stickers/20241.png" />
+          </label>
+
+          <input
+            type="radio"
+            name="stickerToAdd"
+            value="20242"
+            id="20242"
+            class="input-hidden"
+          />
+          <label for="20242">
+            <img src="./assets/stickers/20242.png" />
+          </label>
+
+          <input
+            type="radio"
+            name="stickerToAdd"
+            value="happynewyear"
+            id="happynewyear"
+            class="input-hidden"
+          />
+          <label for="happynewyear">
+            <img src="./assets/stickers/happynewyear.png" />
+          </label>
+
+          <input
+            type="radio"
+            name="stickerToAdd"
+            value="balloons"
+            id="balloons"
+            class="input-hidden"
+          />
+          <label for="balloons">
+            <img src="./assets/stickers/balloons.png" />
+          </label>
+        </div>
+        <div id="sticker-error-message">Please select a sticker to add</div>
+        <div class="modal-button-wrapper">
+          <button class="button-add-to-board" onclick="addStickerToBoard()">
+            Add to Board
+          </button>
+        </div>
+      </div>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/Draggable.min.js"></script>
     <script src="./scripts/Draggable.js"></script>
+    <script src="./scripts/stickers.js"></script>
     <script src="./scripts/jscolor.js"></script>
     <script src="./scripts/bgpattern.js"></script>
     <script src="./scripts/cards.js"></script>

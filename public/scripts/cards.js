@@ -147,7 +147,7 @@ function updateCardList() {
 
 function deleteCard() {
   if (!document.querySelector('input[name="active-card"]:checked')) {
-    noCardSelected();
+    // noCardSelected(); TODO alert for user
     return;
   }
   var toDelete =
