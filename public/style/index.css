@@ -1,0 +1,143 @@
+@font-face {
+  font-family: "Tiempos";
+  src: url("../assets/fonts/Tiempos.ttf");
+}
+
+@font-face {
+  font-family: "Fredoka";
+  src: url("../assets/fonts/Fredoka.ttf");
+}
+
+@font-face {
+  font-family: "DM Mono";
+  src: url("../assets/fonts/DMMono-Light.ttf");
+}
+
+@font-face {
+  font-family: "Courgette";
+  src: url("../assets/fonts/Courgette.ttf");
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Tiempos";
+  background-color: #e9dccb;
+}
+
+.container {
+  background-image: url("../assets/img/vector-background-right.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-position-y: 10%;
+  display: flex;
+  width: 100%;
+  min-height: 95vh;
+  overflow: auto;
+}
+
+.footer {
+  background-color: #e9dccb;
+  font-family: "Fredoka";
+  text-align: center;
+  font-size: 10pt;
+  color: #695460;
+  padding-top: 1.5vh;
+  height: 3.5vh;
+  width: 100%;
+}
+
+.hero-text {
+  background-image: url("../assets/img/vector-background.png");
+  background-repeat: no-repeat;
+  background-position-y: 90%;
+  width: 50%;
+  padding-top: 8%;
+  padding-left: 10%;
+  padding-right: 3%;
+}
+
+.hero-image {
+  background-image: url("../assets/img/hero-image.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 50%;
+  margin-top: 7%;
+  margin-bottom: 6%;
+}
+
+.small-text {
+  font-size: 10pt;
+  font-family: "DM Mono";
+  text-transform: uppercase;
+  letter-spacing: 5pt;
+  color: #3c3c3c;
+}
+
+.large-text {
+  margin-top: 50px;
+  font-size: 32pt;
+}
+
+.best-year-text {
+  text-decoration: underline;
+  color: #856c5a;
+  font-family: "Courgette";
+}
+
+.borderline {
+  width: 250px;
+  border-bottom: 4px solid #3c3c3c;
+  padding-top: 35px;
+}
+
+.normal-text {
+  font-family: "Fredoka";
+  font-size: 13pt;
+  margin-top: 50px;
+  padding-right: 15%;
+  line-height: 1.5;
+  color: #3c3c3c;
+}
+
+.links {
+  margin-top: 30px;
+  padding-right: 15%;
+  text-align: center;
+  padding-bottom: 60px;
+}
+
+.learn-more {
+  font-family: "Fredoka";
+  font-size: 11pt;
+  cursor: pointer;
+  background-color: #927865;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 35px 10px 35px;
+  margin-right: 5px;
+  &:hover {
+    background-color: #b19987;
+  }
+}
+
+.get-started {
+  font-size: 11pt;
+  font-family: "Fredoka";
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 35px 10px 35px;
+  margin-left: 5px;
+  &:hover {
+    background-color: #252525;
+  }
+}
+
+.arrow-icon {
+  width: 12px;
+  margin-left: 5px;
+}

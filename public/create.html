@@ -122,6 +122,24 @@
         >
           Delete Sticker
         </button>
+        <div class="menu-footer">
+          <div>
+            <button class="return-home" onClick="returnHome()">
+              <img
+                src="./assets/img/arrow-narrow-left.png"
+                class="left-arrow"
+              />
+              Return Home
+            </button>
+            <button class="download-board" onClick="downloadBoard()">
+              <img
+                src="./assets/img/download.png"
+                class="download-icon"
+              />Download
+            </button>
+            <div style="height: 10px"></div>
+          </div>
+        </div>
       </div>
 
       <!-- Canvas for board -->
@@ -131,6 +149,7 @@
       <div class="canvas-3" id="canvas-3"></div>
     </div>
     <!-- Modal -->
+    <!-- Card Modal -->
     <div id="card-modal" class="card-modal">
       <div class="card-modal-content">
         <span class="card-close">
@@ -152,7 +171,20 @@
           </svg>
         </span>
         <div class="modal-title" style="margin-bottom: 10px">Add a Card</div>
-        <div class="modal-label">1. Upload an image:</div>
+        <div class="modal-label">
+          1. Upload an image:
+          <span
+            style="
+              font-style: italic;
+              font-size: 10pt;
+              margin-top: 3px;
+              color: #857b74;
+              font-weight: 400;
+            "
+          >
+            (Recommended resolution is 300px x 300px)
+          </span>
+        </div>
 
         <img id="uploaded-image-preview" width="100" style="margin-top: 3px" />
         <div><input type="file" id="uploaded-image" accept="image/*" /></div>
@@ -291,10 +323,118 @@
           <label for="graduation">
             <img src="./assets/cards/graduation.png" />
           </label>
+
+          <input
+            type="radio"
+            name="cardToAdd"
+            value="livemusic"
+            id="livemusic"
+            class="input-hidden"
+          />
+          <label for="livemusic">
+            <img src="./assets/cards/livemusic.png" />
+          </label>
+
+          <input
+            type="radio"
+            name="cardToAdd"
+            value="healthyeating"
+            id="healthyeating"
+            class="input-hidden"
+          />
+          <label for="healthyeating">
+            <img src="./assets/cards/healthyeating.png" />
+          </label>
+
+          <input
+            type="radio"
+            name="cardToAdd"
+            value="cooking"
+            id="cooking"
+            class="input-hidden"
+          />
+          <label for="cooking">
+            <img src="./assets/cards/cooking.png" />
+          </label>
+
+          <input
+            type="radio"
+            name="cardToAdd"
+            value="spa"
+            id="spa"
+            class="input-hidden"
+          />
+          <label for="spa">
+            <img src="./assets/cards/spa.png" />
+          </label>
+
+          <input
+            type="radio"
+            name="cardToAdd"
+            value="volunteer"
+            id="volunteer"
+            class="input-hidden"
+          />
+          <label for="volunteer">
+            <img src="./assets/cards/volunteer.png" />
+          </label>
+
+          <input
+            type="radio"
+            name="cardToAdd"
+            value="savings"
+            id="savings"
+            class="input-hidden"
+          />
+          <label for="savings">
+            <img src="./assets/cards/savings.png" />
+          </label>
+
+          <input
+            type="radio"
+            name="cardToAdd"
+            value="organize"
+            id="organize"
+            class="input-hidden"
+          />
+          <label for="organize">
+            <img src="./assets/cards/organize.png" />
+          </label>
+
+          <input
+            type="radio"
+            name="cardToAdd"
+            value="celebration"
+            id="celebration"
+            class="input-hidden"
+          />
+          <label for="celebration">
+            <img src="./assets/cards/celebration.png" />
+          </label>
+
+          <input
+            type="radio"
+            name="cardToAdd"
+            value="selfcare"
+            id="selfcare"
+            class="input-hidden"
+          />
+          <label for="selfcare">
+            <img src="./assets/cards/selfcare.png" />
+          </label>
         </div>
         <div class="card-input">
           <div class="modal-label" style="margin-top: 12px; margin-bottom: 3px">
             3. Enter a caption:
+            <span
+              style="
+                font-style: italic;
+                font-size: 10pt;
+                margin-top: 2px;
+                font-weight: 400;
+              "
+              >(Optional. Max length of 50 characters)</span
+            >
           </div>
           <input id="card-caption" maxlength="50" />
         </div>
@@ -600,6 +740,7 @@
     <script src="./scripts/stickers.js"></script>
     <script src="./scripts/jscolor.js"></script>
     <script src="./scripts/bgpattern.js"></script>
+    <script src="./scripts/cards.js"></script>
     <script src="./scripts/cards.js"></script>
     <script
       type="text/javascript"
