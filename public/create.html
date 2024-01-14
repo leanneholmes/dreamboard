@@ -3,152 +3,173 @@
   <head>
     <meta charset="UTF-8" />
     <title>Dreamboard - Create</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./assets/img/rainbow-favicon.png"
+    />
     <link rel="stylesheet" href="./style/create.css" />
     <link rel="stylesheet" href="./style/modal.css" />
   </head>
   <body>
     <div class="container">
       <div class="menu">
-        <div class="title">
-          <a href="#"
-            ><img src="./assets/img/rainbow-logo.png" class="logo" />Dreamboard
-            Maker</a
-          >
-        </div>
-        <div class="label">Background Settings</div>
-        <div class="menu-row">
-          <div class="left-float" style="margin-top: 4px">Color</div>
-          <div class="right-float flexbox">
-            <input class="bg-color-input" id="bg-color-value" value="f4f0ef" />
-            <div class="bg-color-picker-wrapper">
+        <div class="menu-flex-col">
+          <div class="upper-col">
+            <div class="title">
+              <a href="#"
+                ><img
+                  src="./assets/img/rainbow-logo.png"
+                  class="logo"
+                />Dreamboard Maker</a
+              >
+            </div>
+            <div class="label">Background Settings</div>
+            <div class="menu-row">
+              <div class="left-float" style="margin-top: 4px">Color</div>
+              <div class="right-float flexbox">
+                <input
+                  class="bg-color-input"
+                  id="bg-color-value"
+                  value="f4f0ef"
+                />
+                <div class="bg-color-picker-wrapper">
+                  <button
+                    class="bg-color-picker"
+                    data-jscolor="{
+                         onInput: 'update(this, \'#canvas-1\')',
+                         valueElement:'#bg-color-value'}"
+                  ></button>
+                </div>
+              </div>
+            </div>
+            <div class="menu-row">
+              <div class="left-float" style="margin-top: 6px">Pattern</div>
+              <div class="right-float">
+                <select
+                  name="bg-pattern"
+                  id="bg-pattern"
+                  class="bg-pattern-input"
+                >
+                  <option value="pattern-none">None</option>
+                  <option value="pattern-dots">Dots Grid</option>
+                  <option value="pattern-fancy">Diamond Tiles</option>
+                  <option value="pattern-flower">Flower Tiles</option>
+                  <option value="pattern-chevron">Chevron</option>
+                </select>
+              </div>
+            </div>
+            <hr class="linebreak" />
+            <div class="label">Picture Cards</div>
+            <div class="current-cards">
+              <div id="current-cards-go-here"></div>
+            </div>
+            <div id="add-card-hidden">
+              <div class="add-button-wrapper">
+                <button class="button-add" onClick="openCardModal()">
+                  <div class="button-text">Add New</div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="icon icon-tabler icon-tabler-photo-plus"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M15 8h.01" />
+                    <path
+                      d="M12.5 21h-6.5a3 3 0 0 1 -3 -3v-12a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v6.5"
+                    />
+                    <path d="M3 16l5 -5c.928 -.893 2.072 -.893 3 0l4 4" />
+                    <path d="M14 14l1 -1c.67 -.644 1.45 -.824 2.182 -.54" />
+                    <path d="M16 19h6" />
+                    <path d="M19 16v6" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div>
               <button
-                class="bg-color-picker"
-                data-jscolor="{
-                     onInput: 'update(this, \'#canvas-1\')',
-                     valueElement:'#bg-color-value'}"
-              ></button>
+                class="button-delete"
+                id="delete-card"
+                onclick="deleteCard()"
+              >
+                Delete Card
+              </button>
+            </div>
+            <hr class="linebreak" />
+            <div class="label">Stickers</div>
+            <div class="current-stickers">
+              <div id="current-stickers-go-here"></div>
+            </div>
+            <div id="add-sticker-hidden">
+              <div class="add-button-wrapper">
+                <button class="button-add" onClick="openStickerModal()">
+                  <div class="button-text">Add New</div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="icon icon-tabler icon-tabler-photo-circle-plus"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M15 8h.01" />
+                    <path
+                      d="M20.964 12.806a9 9 0 0 0 -8.964 -9.806a9 9 0 0 0 -9 9a9 9 0 0 0 9.397 8.991"
+                    />
+                    <path d="M4 15l4 -4c.928 -.893 2.072 -.893 3 0l4 4" />
+                    <path d="M14 14l1 -1c.928 -.893 2.072 -.893 3 0" />
+                    <path d="M16 19.33h6" />
+                    <path d="M19 16.33v6" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <button
+              class="button-delete"
+              id="delete-sticker"
+              onclick="deleteSticker()"
+            >
+              Delete Sticker
+            </button>
+          </div>
+          <div class="menu-footer">
+            <div>
+              <button class="return-home" onClick="returnHome()">
+                <img
+                  src="./assets/img/arrow-narrow-left.png"
+                  class="left-arrow"
+                />
+                Return Home
+              </button>
+              <button class="download-board" onClick="downloadBoard()">
+                <img
+                  src="./assets/img/download.png"
+                  class="download-icon"
+                />Download
+              </button>
+              <div style="height: 10px"></div>
             </div>
           </div>
         </div>
-        <div class="menu-row">
-          <div class="left-float" style="margin-top: 6px">Pattern</div>
-          <div class="right-float">
-            <select name="bg-pattern" id="bg-pattern" class="bg-pattern-input">
-              <option value="pattern-none">None</option>
-              <option value="pattern-dots">Dots Grid</option>
-              <option value="pattern-fancy">Diamond Tiles</option>
-              <option value="pattern-flower">Flower Tiles</option>
-              <option value="pattern-chevron">Chevron</option>
-            </select>
-          </div>
-        </div>
-        <hr class="linebreak" />
-        <div class="label">Picture Cards</div>
-        <div class="current-cards">
-          <div id="current-cards-go-here"></div>
-        </div>
-        <div id="add-card-hidden">
-          <div class="add-button-wrapper">
-            <button class="button-add" onClick="openCardModal()">
-              <div class="button-text">Add New</div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="icon icon-tabler icon-tabler-photo-plus"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                stroke-width="2"
-                stroke="currentColor"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path d="M15 8h.01" />
-                <path
-                  d="M12.5 21h-6.5a3 3 0 0 1 -3 -3v-12a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v6.5"
-                />
-                <path d="M3 16l5 -5c.928 -.893 2.072 -.893 3 0l4 4" />
-                <path d="M14 14l1 -1c.67 -.644 1.45 -.824 2.182 -.54" />
-                <path d="M16 19h6" />
-                <path d="M19 16v6" />
-              </svg>
-            </button>
-          </div>
-        </div>
-        <div>
-          <button class="button-delete" id="delete-card" onclick="deleteCard()">
-            Delete Card
-          </button>
-        </div>
-        <hr class="linebreak" />
-        <div class="label">Stickers</div>
-        <div class="current-stickers">
-          <div id="current-stickers-go-here"></div>
-        </div>
-        <div id="add-sticker-hidden">
-          <div class="add-button-wrapper">
-            <button class="button-add" onClick="openStickerModal()">
-              <div class="button-text">Add New</div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="icon icon-tabler icon-tabler-photo-circle-plus"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                stroke-width="2"
-                stroke="currentColor"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path d="M15 8h.01" />
-                <path
-                  d="M20.964 12.806a9 9 0 0 0 -8.964 -9.806a9 9 0 0 0 -9 9a9 9 0 0 0 9.397 8.991"
-                />
-                <path d="M4 15l4 -4c.928 -.893 2.072 -.893 3 0l4 4" />
-                <path d="M14 14l1 -1c.928 -.893 2.072 -.893 3 0" />
-                <path d="M16 19.33h6" />
-                <path d="M19 16.33v6" />
-              </svg>
-            </button>
-          </div>
-        </div>
-        <button
-          class="button-delete"
-          id="delete-sticker"
-          onclick="deleteSticker()"
-        >
-          Delete Sticker
-        </button>
-        <div class="menu-footer">
-          <div>
-            <button class="return-home" onClick="returnHome()">
-              <img
-                src="./assets/img/arrow-narrow-left.png"
-                class="left-arrow"
-              />
-              Return Home
-            </button>
-            <button class="download-board" onClick="downloadBoard()">
-              <img
-                src="./assets/img/download.png"
-                class="download-icon"
-              />Download
-            </button>
-            <div style="height: 10px"></div>
-          </div>
-        </div>
       </div>
-
-      <!-- Canvas for board -->
       <div id="canvas-1" class="canvas-1">
         <div class="canvas-2" id="canvas-2"></div>
       </div>
-      <div class="canvas-3" id="canvas-3"></div>
+      <div class="canvas-3" id="canvas-3">
     </div>
-    <!-- Modal -->
+
     <!-- Card Modal -->
     <div id="card-modal" class="card-modal">
       <div class="card-modal-content">
@@ -347,15 +368,15 @@
           </label>
 
           <input
-            type="radio"
-            name="cardToAdd"
-            value="cooking"
-            id="cooking"
-            class="input-hidden"
-          />
-          <label for="cooking">
-            <img src="./assets/cards/cooking.png" />
-          </label>
+          type="radio"
+          name="cardToAdd"
+          value="cooking"
+          id="cooking"
+          class="input-hidden"
+        />
+        <label for="cooking">
+          <img src="./assets/cards/cooking.png" />
+        </label>
 
           <input
             type="radio"
@@ -448,7 +469,6 @@
         </div>
       </div>
     </div>
-    <!-- Sticker Modal -->
     <div id="sticker-modal" class="sticker-modal">
       <div class="sticker-modal-content">
         <span class="sticker-close">
@@ -733,23 +753,24 @@
         </div>
       </div>
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/Draggable.min.js"></script>
-    <script src="./scripts/stickers.js"></script>
     <script src="./scripts/jscolor.js"></script>
     <script src="./scripts/bgpattern.js"></script>
+    <script src="./scripts/toast.js"></script>
     <script src="./scripts/cards.js"></script>
+    <script src="./scripts/stickers.js"></script>
     <script src="./scripts/links.js"></script>
+    <script src="./scripts/download.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/Draggable.min.js"></script>
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/toastify-js"
     ></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <link
       rel="stylesheet"
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
     />
-    <script src="./scripts/toast.js"></script>
   </body>
 </html>
