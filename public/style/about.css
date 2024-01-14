@@ -1,0 +1,125 @@
+@font-face {
+  font-family: "Tiempos";
+  src: url("../assets/fonts/Tiempos.ttf");
+}
+
+@font-face {
+  font-family: "Fredoka";
+  src: url("../assets/fonts/Fredoka.ttf");
+}
+
+@font-face {
+  font-family: "DM Mono";
+  src: url("../assets/fonts/DMMono-Light.ttf");
+}
+
+@font-face {
+  font-family: "Courgette";
+  src: url("../assets/fonts/Courgette.ttf");
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Tiempos";
+  background-color: #e9dccb;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.left {
+  background-image: url("../assets/img/vector-background.png");
+  background-repeat: no-repeat;
+  background-position-y: 82%;
+  width: 50%;
+  padding-top: 10%;
+  padding-left: 10%;
+  padding-right: 3%;
+  width: 10%;
+}
+
+.right {
+  background-image: url("../assets/img/vector-background-right.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-position-y: 10%;
+  width: 15%;
+}
+
+.center {
+  padding-top: 4%;
+  padding-right: 5%;
+  width: 75%;
+}
+
+.small-text {
+  font-size: 10pt;
+  font-family: "DM Mono";
+  text-transform: uppercase;
+  letter-spacing: 5pt;
+  color: #3c3c3c;
+}
+
+.borderline {
+  width: 250px;
+  border-bottom: 4px solid #3c3c3c;
+  padding-top: 35px;
+}
+
+.normal-text {
+  font-family: "Fredoka";
+  font-size: 13pt;
+  margin-top: 40px;
+  padding-right: 15%;
+  line-height: 1.5;
+  color: #3c3c3c;
+}
+
+.spacer {
+  height: 20px;
+}
+
+.links {
+  padding-top: 30px;
+  margin-bottom: 40px;
+  padding-right: 15%;
+  text-align: center;
+}
+
+.home {
+  font-family: "Fredoka";
+  font-size: 11pt;
+  cursor: pointer;
+  background-color: #927865;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 35px 10px 35px;
+  margin-right: 5px;
+  &:hover {
+    background-color: #b19987;
+  }
+}
+
+.get-started {
+  font-size: 11pt;
+  font-family: "Fredoka";
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 35px 10px 35px;
+  margin-left: 5px;
+  &:hover {
+    background-color: #252525;
+  }
+}
+
+.arrow-icon {
+  width: 12px;
+  margin-left: 5px;
+}
