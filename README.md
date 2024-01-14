@@ -44,7 +44,7 @@
 
 This is a web application developed for the <b>United Hacks v2 Hackathon</b>. The theme was to create something centered around New Year's Resolutions. With Dreamboard, you can create and customize your own vision board, which is a collection of images and text elements that represent your goals.
 
-From the Dreamboard Maker, users can modify the background of the board, including the color and pattern. They can also add picture cards with captions, or stickers. Users are able to upload images from their own computer to add to a card. These objects can be clicked and dragged around. When users are satisfied with their changes, they can download it as a .png file. 
+From the Dreamboard Maker, users can modify the background of the board, including the color and pattern. They can also add picture cards with captions, or stickers. Users are able to upload images from their own computer to add to a card. These objects can be clicked and dragged around. When users are satisfied with their board, they can download and save it as a .png file. 
 
  <p align="center"><img src="/public/assets/img/thumbnail-1.png" alt="Screenshot-1" width="300" /><img src="/public/assets/img/thumbnail-2.png" alt="Screenshot-2" width="300" /></p>
 
