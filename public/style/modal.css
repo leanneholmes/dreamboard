@@ -1,3 +1,4 @@
+/* Font imports */
 @font-face {
   font-family: "Fredoka";
   src: url("../assets/fonts/Fredoka.ttf");
@@ -35,6 +36,7 @@ input {
   }
 }
 
+/* Card Modal */
 .card-modal {
   display: none;
   position: absolute;
@@ -116,6 +118,7 @@ input {
   }
 }
 
+/* Sticker Modal */
 .sticker-modal {
   display: none;
   position: absolute;

@@ -1,3 +1,4 @@
+/* Font Imports */
 @font-face {
   font-family: "Tiempos";
   src: url("../assets/fonts/Tiempos.ttf");
@@ -18,6 +19,7 @@
   src: url("../assets/fonts/Courgette.ttf");
 }
 
+/* Main Section */
 body {
   padding: 0;
   margin: 0;
@@ -28,6 +30,7 @@ body {
 .container {
   display: flex;
   width: 100%;
+  /* height: 100vh; */
 }
 
 .left {
@@ -89,6 +92,7 @@ body {
   text-align: center;
 }
 
+/* Buttons */
 .home {
   font-family: "Fredoka";
   font-size: 11pt;
