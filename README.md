@@ -9,7 +9,7 @@
 
   <p align="center">
     A fun, interactive web app where users can create their own digital vision boards. <br /><br />
-      <img src="/public/assets/img/devpost-img-alt.png" alt="Preview" width="300" />
+      <img src="/public/assets/img/devpost-img.png" alt="Preview" width="300" />
     <br />
     <br />
     <a href="https://www.youtube.com/watch?v=TpyGZnQ1mAA">Watch Demo</a>
