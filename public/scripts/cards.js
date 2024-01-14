@@ -1,13 +1,16 @@
-var currentCards = {}; // This object tracks current cards to appear on the left menu
+/* List of current cards on the board */
+var currentCards = {};
 
 var cardmodal = document.getElementById("card-modal");
 var cardSpan = document.getElementsByClassName("card-close")[0]; // Span element that closes the modal
 
+/* Open card modal */
 function openCardModal() {
   cardmodal.style.display = "block";
   resetCardModal();
 }
 
+/* Reset modal fields */
 function resetCardModal() {
   document.getElementById("card-error-message").style.display = "none";
   document.getElementById("uploaded-image").value = "";
@@ -20,10 +23,12 @@ function resetCardModal() {
   }
 }
 
+/* When the user clicks on (x), close the modal */
 cardSpan.onclick = function () {
   cardmodal.style.display = "none";
 };
 
+/* Show preview of user uploaded image */
 function showImagePreview() {
   var fileInput = document.getElementById("uploaded-image"); // Pointer to file location
   const image = document.getElementById("uploaded-image-preview"); // Pointer to file image
@@ -35,6 +40,7 @@ function showImagePreview() {
 }
 showImagePreview();
 
+/* Add card to board */
 function addCardToBoard() {
   var fileInput = document.getElementById("uploaded-image");
   var file = fileInput.files[0];
@@ -59,6 +65,7 @@ function addCardToBoard() {
   cardmodal.style.display = "none"; // Close modal
 }
 
+/* Places card div on canvas */
 function addCardToCanvas(uid, imageURL, cardCaption) {
   document.getElementById("canvas-3").insertAdjacentHTML(
     "beforeend",
@@ -71,6 +78,7 @@ function addCardToCanvas(uid, imageURL, cardCaption) {
   );
 }
 
+/* Makes card Draggable */
 function makeCardDraggable() {
   gsap.registerPlugin(Draggable);
   Draggable.create(".card", {
@@ -81,6 +89,7 @@ function makeCardDraggable() {
   });
 }
 
+/* Update current cards object */
 function updateCurrentCards(card) {
   currentCards[getHighestCardIndex()] = card;
 }
@@ -97,6 +106,7 @@ const getHighestCardIndex = () => {
   }
 };
 
+/* Update cards shown on menu */
 function updateCardList() {
   if (Object.keys(currentCards).length >= 1) {
     document.getElementById("add-card-hidden").innerHTML = "";
@@ -145,9 +155,10 @@ function updateCardList() {
   document.getElementById("current-cards-go-here").innerHTML = cardHTMLString;
 }
 
+/* Delete a card */
 function deleteCard() {
   if (!document.querySelector('input[name="active-card"]:checked')) {
-    // noCardSelected(); TODO alert for user
+    noCardSelected();
     return;
   }
   var toDelete =

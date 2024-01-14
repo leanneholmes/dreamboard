@@ -1,13 +1,16 @@
-var currentStickers = {}; // For tracking on the l eft menu
+/* List of current stickers on the board */
+var currentStickers = {};
 
 var stickermodal = document.getElementById("sticker-modal");
 var stickerSpan = document.getElementsByClassName("sticker-close")[0]; // Span element that closes the modal
 
+/* Open card modal */
 function openStickerModal() {
   stickermodal.style.display = "block";
   resetStickerModal();
 }
 
+/* Reset modal fields */
 function resetStickerModal() {
   var selectedSticker = document.querySelector(
     'input[name="stickerToAdd"]:checked'
@@ -18,10 +21,12 @@ function resetStickerModal() {
   document.getElementById("sticker-error-message").style.display = "none";
 }
 
+/* When the user clicks on (x), close the modal */
 stickerSpan.onclick = function () {
   stickermodal.style.display = "none";
 };
 
+/* Add sticker to board */
 function addStickerToBoard() {
   var stickerURL = "";
   var selectedSticker = document.querySelector(
@@ -40,6 +45,7 @@ function addStickerToBoard() {
   stickermodal.style.display = "none"; // Close modal
 }
 
+/* Places sticker div on canvas */
 function addStickerToCanvas(stickerUid, stickerURL) {
   document.getElementById("canvas-3").insertAdjacentHTML(
     "beforeend",
@@ -49,6 +55,7 @@ function addStickerToCanvas(stickerUid, stickerURL) {
   );
 }
 
+/* Makes sticker Draggable */
 function makeStickerDraggable() {
   gsap.registerPlugin(Draggable);
   Draggable.create(".sticker", {
@@ -59,9 +66,9 @@ function makeStickerDraggable() {
   });
 }
 
+/* Update current stickers object */
 function updateCurrentStickers(sticker) {
   currentStickers[getHighestStickerIndex()] = sticker;
-  console.log("Current stickers array ", currentStickers);
 }
 
 const getHighestStickerIndex = () => {
@@ -76,13 +83,13 @@ const getHighestStickerIndex = () => {
   }
 };
 
+/* Update stickers shown on menu */
 function updateStickerList() {
   if (Object.keys(currentStickers).length >= 1) {
     document.getElementById("add-sticker-hidden").innerHTML = "";
   }
   var stickerHTMLString = "";
   let stickerArr = Object.entries(currentStickers);
-  console.log("Sticker array", stickerArr);
   for ([key, value] of stickerArr) {
     stickerHTMLString += `<div class="current-stickers-input-wrapper"><input
             type="radio"
@@ -126,14 +133,18 @@ function updateStickerList() {
     stickerHTMLString;
 }
 
+/* Delete a sticker */
 function deleteSticker() {
+  if (!document.querySelector('input[name="active-sticker"]:checked')) {
+    noStickerSelected();
+    return;
+  }
   var toDelete =
     "sticker-" +
     document.querySelector('input[name="active-sticker"]:checked').value;
   var toDeleteKey = parseInt(
     document.querySelector('input[name="active-sticker"]:checked').value
   );
-  console.log("Deleting sticker ", toDeleteKey);
   document.getElementById(toDelete).remove();
   delete currentStickers[toDeleteKey];
   updateStickerList();

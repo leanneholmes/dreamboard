@@ -306,3 +306,13 @@ a {
   position: absolute;
   filter: drop-shadow(3px 3px rgba(0, 0, 0, 0.3));
 }
+
+.sticker-lg {
+  max-width: 120px;
+  position: absolute;
+  filter: drop-shadow(3px 3px rgba(0, 0, 0, 0.3));
+}
+
+.sticker-img {
+  width: 100%;
+}
